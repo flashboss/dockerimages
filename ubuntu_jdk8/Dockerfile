@@ -36,14 +36,7 @@ M2_HOME=/home/user/apache-maven-$MAVEN_VERSION
 
 ENV PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 
-RUN mkdir /home/user/apache-maven-$MAVEN_VERSION && \
-  wget \
-  --no-cookies \
-  --no-check-certificate \
-  --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-  -qO- \
-  "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b14/jdk-$JAVA_VERSION-linux-x64.tar.gz" | sudo tar -zx -C /opt/ && \
-  wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/user/apache-maven-$MAVEN_VERSION/
+RUN mkdir /home/user/apache-maven-$MAVEN_VERSION
 ENV TERM xterm
 
 ENV LANG en_GB.UTF-8
