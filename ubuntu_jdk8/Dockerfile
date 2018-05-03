@@ -27,9 +27,9 @@ USER user
 LABEL che:server:8080:ref=wildfly che:server:8080:protocol=http che:server:8000:ref=wildfly-debug che:server:8000:protocol=http che:server:9876:ref=codeserver che:server:9876:protocol=http
 
 
-ENV MAVEN_VERSION=3.3.9 \
-    JAVA_VERSION=8u45 \
-    JAVA_VERSION_PREFIX=1.8.0_45
+ENV MAVEN_VERSION=3.5.3 \
+    JAVA_VERSION=8u171 \
+    JAVA_VERSION_PREFIX=1.8.0_171
 
 ENV JAVA_HOME=/opt/jdk$JAVA_VERSION_PREFIX \
 M2_HOME=/home/user/apache-maven-$MAVEN_VERSION
@@ -42,7 +42,7 @@ RUN mkdir /home/user/apache-maven-$MAVEN_VERSION && \
   --no-check-certificate \
   --header "Cookie: oraclelicense=accept-securebackup-cookie" \
   -qO- \
-  "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b14/jdk-$JAVA_VERSION-linux-x64.tar.gz" | sudo tar -zx -C /opt/ && \
+  "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-$JAVA_VERSION-linux-x64.tar.gz" | sudo tar -zx -C /opt/ && \
   wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/user/apache-maven-$MAVEN_VERSION/
 ENV TERM xterm
 
