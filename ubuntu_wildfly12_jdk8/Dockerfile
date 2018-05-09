@@ -47,7 +47,7 @@ RUN mkdir /home/user/wildfly12 /home/user/apache-maven-$MAVEN_VERSION && \
   wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C /home/user/apache-maven-$MAVEN_VERSION/
 ENV TERM xterm
 
-RUN wget -qO- "http://download.jboss.org/wildfly/12.0.0.Final/wildfly-12.0.0.Final.tar.gz" | tar -zx --strip-components=1 -C /home/user/wildfly12 && /home/user/wildfly12/bin/standalone.sh
+RUN wget -qO- "http://download.jboss.org/wildfly/12.0.0.Final/wildfly-12.0.0.Final.tar.gz" | tar -zx --strip-components=1 -C /home/user/wildfly12 && /home/user/wildfly12/bin/standalone.sh &
 
 ENV LANG en_GB.UTF-8
 ENV LANG en_US.UTF-8
